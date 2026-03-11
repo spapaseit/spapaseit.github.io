@@ -3,287 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sergi Papaseit — Senior Full-Stack Software Engineer</title>
-  <meta name="description" content="Product-minded full-stack engineer with experience shipping user-facing web products, internal tools, and analytics platforms.">
-  <link rel="stylesheet" href="style.css">
+  <title>Sergi Papaseit</title>
+  <meta name="description" content="Sergi Papaseit — Senior Full-Stack Software Engineer">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-bg: #1c1917;
+      --color-text: #e7e5e4;
+      --color-muted: #a8a29e;
+      --color-accent: #60a5fa;
+      --color-accent-hover: #93bbfd;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .home {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      color: var(--color-muted);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.15s;
+    }
+
+    .links a:hover {
+      color: var(--color-accent-hover);
+    }
+  </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-sticky">
-        <header class="identity">
-          <h1>Sergi Papaseit</h1>
-          <p class="title">Senior Full-Stack Software Engineer</p>
-        </header>
-
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#earlier">Earlier Career</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="sidebar-contact">
-          <a href="mailto:sergi.papaseit.valls@gmail.com">sergi.papaseit.valls@gmail.com</a>
-          <a href="https://github.com/spapaseit">github.com/spapaseit</a>
-        </div>
-      </div>
-    </aside>
-
-    <main class="content">
-      <section id="about" class="section">
-        <h2>About</h2>
-        <p>I'm a product-minded full-stack engineer with experience shipping user-facing web products, internal tools, and analytics platforms. I care about creating smooth, intuitive user experiences and building high-quality software in tight collaboration with product and design.</p>
-        <p>I thrive in environments where the goal is to deliver value quickly, validate assumptions, and refine the solution continuously. My strongest technical stack is TypeScript, React, Node.js, and all things .NET, and I'm comfortable jumping between frontend, backend, infra, and data to keep momentum high.</p>
-      </section>
-
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior Software Engineer</h3>
-              <p class="company">Plex, Inc <span class="location">— Remote</span></p>
-            </div>
-            <time>Oct 2024 — Present</time>
-          </div>
-          <ul>
-            <li>Defined and led the integration strategy for connecting external systems into Plex's new Admin backend (TypeScript + Node.js), with a focus on scalability, maintainability, and developer experience.</li>
-            <li>Coordinated across multiple teams to align implementation details and ensure smooth and cohesive product delivery.</li>
-            <li>Improved testing culture on the Media CMS application (React + TypeScript), guiding the adoption of a more consistent, reliable test strategy.</li>
-            <li>Designed and implemented a queue-based orchestration pattern for K8s cron jobs, significantly reducing resource consumption and improving system responsiveness.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior Full-Stack Software Engineer</h3>
-              <p class="company">Aon <span class="location">— London, UK (Remote)</span></p>
-              <p class="project">Request Platform — Workforce and Compensation analytics and insights</p>
-            </div>
-            <time>Jul 2020 — Sep 2024</time>
-          </div>
-          <ul>
-            <li>Drove the Server-Driven UI (SDUI) frontend product strategy for a new React + TypeScript analytics platform used across a $250M line of business.</li>
-            <li>Built a dynamic dashboard engine that dramatically accelerated feature delivery and experimentation across teams.</li>
-            <li>Shipped real-time client-side analytics workflows (CSV/Excel ingestion) that enabled power users to explore insights instantly.</li>
-            <li>Established TDD practices (Jest + RTL), reducing regressions and allowing tighter shipping cycles.</li>
-            <li>Collaborated directly with PMs, designers, data analysts, and stakeholders to refine flows, simplify UX, and validate product decisions.</li>
-            <li>Mentored junior developers on the team.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior Full-Stack Software Engineer / Architect</h3>
-              <p class="company">Aon-McLagan <span class="location">— London, UK (Remote)</span></p>
-              <p class="project">McLagan Survey Platform</p>
-            </div>
-            <time>Jul 2017 — Jul 2020</time>
-          </div>
-          <ul>
-            <li>Designed and built a full survey and reporting platform from scratch, reducing time-to-market from 6 months to 30 minutes.</li>
-            <li>Created a reporting module that automated complex weighting logic, eliminating hours of manual work and drastically improving the experience for reporting admins.</li>
-            <li>Created an extensible front-end reporting module add-on for the survey platform.</li>
-            <li>Pair-designed features with PMs and business stakeholders to ensure the platform aligned with workflows and real user needs.</li>
-            <li>Reinforced a strong testing culture with 450+ frontend and 300+ backend tests.</li>
-            <li>Guided and mentored a junior developer, enhancing their TypeScript skills and development practices.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior Full-Stack Software Engineer / Architect</h3>
-              <p class="company">QOAM Foundation <span class="location">— Nijmegen, NL (Remote)</span></p>
-              <p class="project">Quality Open Access Marker</p>
-            </div>
-            <time>Dec 2015 — Dec 2023</time>
-          </div>
-          <ul>
-            <li>Led architectural direction for both frontend and backend.</li>
-            <li>Modernized large portions of the application by moving logic to client-side JavaScript where it improved performance and clarity.</li>
-            <li>Built a flexible and extensible Excel import system that reduced processing time from hours to minutes.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <div class="job-header">
-            <div>
-              <h3>Senior Full-Stack Software Engineer / Architect</h3>
-              <p class="company">Gigantisch B.V. <span class="location">— Purmerend, NL (Remote)</span></p>
-              <p class="project">e-Commerce Platform</p>
-            </div>
-            <time>Sep 2014 — Dec 2023</time>
-          </div>
-          <ul>
-            <li>Led end-to-end development of a multi-shop e-commerce platform with strong focus on customization and UX.</li>
-            <li>Created shared JS plugins (published as npm packages) to streamline development and maintain consistency across shops.</li>
-            <li>Shipped Node-based SSR and backend APIs to improve SEO and user experience.</li>
-            <li>Implemented Node.js backend with APIs allowing for dynamic SiteMap.xml generation and publication, based on live shop inventory.</li>
-            <li>Owned microservices, infra, and CI/CD, enabling fast deployments and short iteration loops.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="earlier" class="section">
-        <h2>Earlier Career</h2>
-        <div class="earlier-roles">
-          <div class="earlier-role">
-            <span class="earlier-title">Lead Developer</span>
-            <span class="earlier-company">WePayPeople, Amsterdam, NL</span>
-            <time>Jun 2012 — Aug 2014</time>
-          </div>
-          <div class="earlier-role">
-            <span class="earlier-title">Lead Developer</span>
-            <span class="earlier-company">Nike Europe, Hilversum, NL</span>
-            <time>Sep 2011 — Dec 2011</time>
-          </div>
-          <div class="earlier-role">
-            <span class="earlier-title">Architect / Senior Software Engineer</span>
-            <span class="earlier-company">VTS Politie Nederland (Dutch National Police), Amsterdam, NL</span>
-            <time>Sep 2008 — Apr 2011</time>
-          </div>
-          <div class="earlier-role">
-            <span class="earlier-title">Architect / Software Engineer</span>
-            <span class="earlier-company">Tiscali Nederland, Utrecht, NL</span>
-            <time>Mar 2007 — Apr 2008</time>
-          </div>
-          <div class="earlier-role">
-            <span class="earlier-title">Software Engineer</span>
-            <span class="earlier-company">Rijkswaterstaat (Dutch Ministry of Public Works), Utrecht, NL</span>
-            <time>Jan 2007 — Mar 2007</time>
-          </div>
-          <div class="earlier-role">
-            <span class="earlier-title">Architect / Software Engineer</span>
-            <span class="earlier-company">NATO NC3A, The Hague, NL</span>
-            <time>Jan 2005 — Dec 2006</time>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Languages</h3>
-            <div class="tags">
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>C#</span>
-              <span>Python</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Web Development</h3>
-            <div class="tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>(ASP) .NET</span>
-              <span>Blazor</span>
-              <span>HTML5</span>
-              <span>CSS3 / SASS</span>
-              <span>styled-components</span>
-              <span>GraphQL</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Databases</h3>
-            <div class="tags">
-              <span>SQL Server</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
-              <span>Redis</span>
-              <span>SQLite</span>
-              <span>Entity Framework Core</span>
-              <span>Dapper</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>DevOps & Cloud</h3>
-            <div class="tags">
-              <span>AWS</span>
-              <span>Azure</span>
-              <span>Docker</span>
-              <span>Kubernetes</span>
-              <span>GitHub Actions</span>
-              <span>Azure Pipelines</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Messaging</h3>
-            <div class="tags">
-              <span>RabbitMQ</span>
-              <span>Kafka</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Testing</h3>
-            <div class="tags">
-              <span>Jest</span>
-              <span>React Testing Library</span>
-              <span>xUnit</span>
-              <span>NUnit</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Product & Soft Skills</h3>
-            <div class="tags">
-              <span>Product thinking</span>
-              <span>UX intuition</span>
-              <span>Fast iteration</span>
-              <span>Mentoring</span>
-              <span>Cross-team alignment</span>
-              <span>Tech-business bridge</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="education-list">
-          <div class="education-item">
-            <h3>Bachelor of Science in Information Systems</h3>
-            <p>European University, The Hague</p>
-          </div>
-          <div class="education-item">
-            <h3>Computer Science</h3>
-            <p>Universitat Politècnica de Catalunya, Barcelona</p>
-          </div>
-        </div>
-
-        <h3 class="subsection-title">Courses</h3>
-        <p>AI Hero — Build DeepSearch in TypeScript (by Matt Pocock)</p>
-
-        <h3 class="subsection-title">Other</h3>
-        <ul>
-          <li>Certified Scrum Master</li>
-          <li>Frequent conference attendee (JSWorld, DEVintersection, Microsoft Build)</li>
-        </ul>
-      </section>
-
-      <section id="languages" class="section">
-        <h2>Languages</h2>
-        <div class="languages-list">
-          <div class="language"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
-          <div class="language"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
-          <div class="language"><span class="lang-name">Catalan</span><span class="lang-level">Native</span></div>
-          <div class="language"><span class="lang-name">Dutch</span><span class="lang-level">Fluent</span></div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Get in touch at <a href="mailto:sergi.papaseit.valls@gmail.com">sergi.papaseit.valls@gmail.com</a> or find me on <a href="https://github.com/spapaseit">GitHub</a>.</p>
-      </section>
-    </main>
+  <div class="home">
+    <h1>Sergi Papaseit</h1>
+    <p class="subtitle">Senior Full-Stack Software Engineer</p>
+    <div class="links">
+      <a href="/cv">CV</a>
+      <a href="https://github.com/spapaseit">GitHub</a>
+      <a href="https://linkedin.com/in/sergipapaseit">LinkedIn</a>
+      <a href="mailto:sergi.papaseit.valls@gmail.com">Email</a>
+    </div>
   </div>
 </body>
 </html>
