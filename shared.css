@@ -17,8 +17,8 @@
   --color-text: #0a0a0a;
   --color-text-secondary: #3a3a3a;
   --color-text-muted: #8a8578;
-  --color-accent: #00d4aa;
-  --color-accent-hover: #00b894;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
   --color-border: #d4cfc4;
   --color-tag-bg: #e8e3d8;
   --color-tag-text: #3a3a3a;
@@ -28,8 +28,8 @@
   --color-dark-surface: #141414;
   --color-dark-text: #f0ece2;
   --color-dark-muted: #8a8578;
-  --color-dark-accent: #00d4aa;
-  --color-dark-accent-hover: #00f0c0;
+  --color-dark-accent: #4f8ff7;
+  --color-dark-accent-hover: #6ba3fa;
 
   /* ── Fonts ── */
   --font-display: 'Sora', sans-serif;
