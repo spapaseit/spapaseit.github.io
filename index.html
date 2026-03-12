@@ -13,8 +13,7 @@
     }
 
     .site-nav {
-      background: transparent;
-      border-bottom-color: rgba(255, 255, 255, 0.08);
+      border-bottom-color: rgba(240, 236, 226, 0.1);
     }
 
     .site-nav .nav-home {
@@ -34,104 +33,202 @@
       color: var(--color-dark-text);
     }
 
+    .site-nav .nav-links a::after {
+      background: var(--color-dark-accent);
+    }
+
+    /* ── Hero ── */
+
     .hero {
-      max-width: 600px;
+      max-width: 820px;
       margin: 0 auto;
-      padding: 8vh 2rem 4rem;
+      padding: 10vh 2.5rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
     }
 
-    .hero .tagline {
+    .hero-name .accent-slash {
+      color: var(--color-dark-accent);
+      font-weight: 300;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: var(--color-dark-muted);
-      font-size: 1.05rem;
-      margin-top: 0.75rem;
-      line-height: 1.5;
-    }
-
-    .hero .bio {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #d6d3d1;
-    }
-
-    .hero .bio p+p {
-      margin-top: 0.75rem;
-    }
-
-    .pages {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 1rem;
     }
 
-    .pages a {
+    .hero-tagline::before {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: var(--color-dark-accent);
+      flex-shrink: 0;
+    }
+
+    .hero-bio {
+      margin-top: 3.5rem;
+      max-width: 520px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #b5b0a6;
+    }
+
+    .hero-bio p+p {
+      margin-top: 1rem;
+    }
+
+    /* ── Page links ── */
+
+    .pages {
+      margin-top: 4rem;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid rgba(240, 236, 226, 0.1);
+    }
+
+    .pages a {
+      display: grid;
+      grid-template-columns: 2rem 1fr auto;
       align-items: center;
-      padding: 1rem 1.25rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(240, 236, 226, 0.1);
       color: var(--color-dark-text);
-      transition: border-color 0.15s, background 0.15s;
+      transition: padding-left 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s;
     }
 
     .pages a:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.03);
+      padding-left: 1rem;
       color: var(--color-dark-text);
     }
 
-    .pages .page-link-title {
-      font-weight: 600;
-      font-size: 0.95rem;
+    .pages a:hover .page-link-num {
+      color: var(--color-dark-accent);
     }
 
-    .pages .page-link-desc {
+    .pages a:hover .page-link-arrow {
+      transform: translateX(4px);
+      color: var(--color-dark-accent);
+    }
+
+    .page-link-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--color-dark-muted);
+      transition: color 0.2s;
+    }
+
+    .page-link-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .page-link-desc {
       font-size: 0.8rem;
       color: var(--color-dark-muted);
-      margin-top: 0.15rem;
+      font-weight: 300;
+      margin-top: 0.1rem;
     }
 
-    .pages .page-link-arrow {
+    .page-link-arrow {
+      font-family: var(--font-body);
       color: var(--color-dark-muted);
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       flex-shrink: 0;
-      margin-left: 1rem;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s;
     }
+
+    /* ── Elsewhere ── */
 
     .elsewhere {
-      margin-top: 3rem;
+      margin-top: 4rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
     .elsewhere a {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: var(--color-dark-muted);
+      position: relative;
+      transition: color 0.2s;
     }
 
     .elsewhere a:hover {
       color: var(--color-dark-accent);
     }
 
+    .elsewhere a::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-dark-accent);
+      transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .elsewhere a:hover::before {
+      width: 100%;
+    }
+
+    /* ── Footer line ── */
+
+    .colophon {
+      margin-top: 6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(240, 236, 226, 0.06);
+      font-size: 0.7rem;
+      color: rgba(240, 236, 226, 0.2);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 640px) {
       .hero {
-        padding: 4vh 1.25rem 3rem;
+        padding: 6vh 1.5rem 4rem;
       }
 
-      .hero h1 {
-        font-size: 2rem;
+      .hero-name {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+      }
+
+      .hero-bio {
+        margin-top: 2.5rem;
+      }
+
+      .pages a {
+        grid-template-columns: 1.5rem 1fr auto;
+      }
+
+      .page-link-title {
+        font-size: 1.15rem;
       }
     }
   </style>
@@ -147,17 +244,22 @@
   </nav>
 
   <div class="hero">
-    <h1>Sergi Papaseit</h1>
-    <p class="tagline">Senior Full-Stack Software Engineer</p>
-
-    <div class="bio">
-      <p>I'm a product-minded engineer based in Barcelona. I build web products, internal tools, and analytics platforms — mostly with TypeScript, React, Node.js, and .NET. I care
-        about making things that are genuinely useful and pleasant to use.</p>
-      <p>Outside of work, I lift weights in my home gym, try to read a lot, but actually spend most of my time with my kids. This is my corner of the internet.</p>
+    <div>
+      <h1 class="hero-name anim-fade-up anim-delay-1">Sergi<br><span class="accent-slash">/</span> Papaseit</h1>
+      <p class="hero-tagline anim-fade-up anim-delay-2">Senior Full-Stack Software Engineer</p>
     </div>
 
-    <div class="pages">
+    <div class="hero-bio anim-fade-up anim-delay-3">
+      <p>
+        I'm a product-minded engineer based in Barcelona. I build web products, internal tools, and analytics platforms — mostly with TypeScript, React, Node.js, and .NET. I care
+        about making things that are genuinely useful and pleasant to use.
+      </p>
+      <p>Outside of work, I lift weights in my home gym, and try to read a lot, but actually spend most of my time with my kids. This is my corner of the internet.</p>
+    </div>
+
+    <div class="pages anim-fade-up anim-delay-4">
       <a href="/cv">
+        <span class="page-link-num">01</span>
         <div>
           <div class="page-link-title">CV</div>
           <div class="page-link-desc">Work experience, skills, education</div>
@@ -165,6 +267,7 @@
         <span class="page-link-arrow">&rarr;</span>
       </a>
       <a href="/bookshelf">
+        <span class="page-link-num">02</span>
         <div>
           <div class="page-link-title">Bookshelf</div>
           <div class="page-link-desc">Books I've loved and recommend</div>
@@ -172,6 +275,7 @@
         <span class="page-link-arrow">&rarr;</span>
       </a>
       <a href="/gym">
+        <span class="page-link-num">03</span>
         <div>
           <div class="page-link-title">Gym</div>
           <div class="page-link-desc">My home gym setup and training</div>
@@ -180,7 +284,7 @@
       </a>
     </div>
 
-    <div class="elsewhere">
+    <div class="elsewhere anim-fade-up anim-delay-5">
       <a href="https://github.com/spapaseit">GitHub</a>
       <a href="https://linkedin.com/in/sergipapaseit">LinkedIn</a>
       <a href="mailto:sergi.papaseit.valls@gmail.com">Email</a>

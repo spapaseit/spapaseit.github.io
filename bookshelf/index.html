@@ -7,53 +7,83 @@
   <meta name="description" content="Books I've loved and would recommend.">
   <link rel="stylesheet" href="../shared.css">
   <style>
+    .page h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .book-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
     .book-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 0;
     }
 
     .book {
-      padding-bottom: 1.25rem;
+      padding: 1rem 0 1rem 1.25rem;
       border-bottom: 1px solid var(--color-border);
+      border-left: 2px solid transparent;
+      transition: border-left-color 0.2s, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .book:last-child {
       border-bottom: none;
-      padding-bottom: 0;
+    }
+
+    .book:hover {
+      border-left-color: var(--color-accent);
+      padding-left: 1.75rem;
     }
 
     .book-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
       font-weight: 600;
-      font-size: 0.95rem;
       color: var(--color-text);
     }
 
     .book-author {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 300;
       color: var(--color-text-muted);
       margin-top: 0.1rem;
     }
 
     .book-note {
       font-size: 0.85rem;
+      font-weight: 300;
       color: var(--color-text-secondary);
-      margin-top: 0.35rem;
-      line-height: 1.55;
+      margin-top: 0.4rem;
+      line-height: 1.6;
     }
 
     .empty-note {
       color: var(--color-text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-style: italic;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
     }
 
     /* ── Collapsible series ─────────────────────────── */
 
     .book-series {
       border-bottom: 1px solid var(--color-border);
-      padding-bottom: 1.25rem;
+      padding: 0.75rem 0 0.75rem 1.25rem;
+      border-left: 2px solid transparent;
+      transition: border-left-color 0.2s;
+    }
+
+    .book-series:hover {
+      border-left-color: var(--color-accent);
     }
 
     .book-series summary {
@@ -61,7 +91,7 @@
       list-style: none;
       display: flex;
       align-items: baseline;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .book-series summary::-webkit-details-marker {
@@ -69,11 +99,14 @@
     }
 
     .book-series summary::before {
-      content: '▸';
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      transition: transform 0.15s;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid var(--color-accent);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
       flex-shrink: 0;
+      transition: transform 0.2s ease;
     }
 
     .book-series[open] summary::before {
@@ -81,29 +114,68 @@
     }
 
     .book-series .series-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
       font-weight: 600;
-      font-size: 0.95rem;
       color: var(--color-text);
     }
 
     .book-series .series-meta {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 300;
       color: var(--color-text-muted);
     }
 
     .book-series .series-books {
-      /* list-style: none; */
-      margin-top: 0.75rem;
-      padding-left: 1.1rem;
+      margin-top: 0.85rem;
+      padding-left: 1.2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0.25rem;
+      animation: fadeUp 0.3s ease both;
     }
 
     .book-series .series-books li {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 300;
       color: var(--color-text-secondary);
-      line-height: 1.5;
+      line-height: 1.6;
+      padding-left: 0.75rem;
+      position: relative;
+    }
+
+    .book-series .series-books li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      background: var(--color-accent);
+      opacity: 0.5;
+    }
+
+    /* ── Section numbering ── */
+
+    .page h2 .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--color-accent);
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 640px) {
+      .book {
+        padding-left: 0.75rem;
+      }
+
+      .book:hover {
+        padding-left: 1.25rem;
+      }
+
+      .book-series {
+        padding-left: 0.75rem;
+      }
     }
   </style>
 </head>
@@ -118,99 +190,107 @@
   </nav>
 
   <div class="page">
-    <h1>Bookshelf</h1>
-    <p class="page-intro">Books I've loved and would recommend. Not a comprehensive list — just the ones that stuck with me. I'll add more over time.</p>
+    <h1 class="anim-fade-up anim-delay-1">Bookshelf</h1>
+    <p class="page-intro anim-fade-up anim-delay-2">Books I've loved and would recommend. Not a comprehensive list — just the ones that stuck with me. I'll add more over time.</p>
 
-    <h2>Software & Technology</h2>
-    <ul class="book-list">
-      <li class="book">
-        <div class="book-title"><!-- Book Title --></div>
-        <div class="book-author"><!-- Author --></div>
-        <p class="book-note"><!-- Optional: a line about why you liked it --></p>
-      </li>
-    </ul>
-    <p class="empty-note">Coming soon — I need to dig through my shelves.</p>
-
-    <h2>Non-Fiction</h2>
-    <ul class="book-list">
-      <li class="book">
-        <div class="book-title"><!-- Book Title --></div>
-        <div class="book-author"><!-- Author --></div>
-      </li>
-    </ul>
-    <p class="empty-note">Coming soon.</p>
-
-    <h2>Sci-Fi & Fantasy</h2>
-    <div class="book-list">
-      <details class="book-series">
-        <summary>
-          <span class="series-title">The Hitchhiker's Guide to the Galaxy</span>
-          <span class="series-meta">— Douglas Adams · 5 books</span>
-        </summary>
-        <ol class="series-books">
-          <li>The Hitchhiker's Guide to the Galaxy</li>
-          <li>The Restaurant at the End of the Universe</li>
-          <li>Life, the Universe and Everything</li>
-          <li>So Long, and Thanks for All the Fish</li>
-          <li>Mostly Harmless</li>
-        </ol>
-      </details>
-
-      <details class="book-series">
-        <summary>
-          <span class="series-title">Discworld</span>
-          <span class="series-meta">— Terry Pratchett · 36 books</span>
-        </summary>
-        <ol class="series-books">
-          <li>The Colour of Magic</li>
-          <li>The Light Fantastic</li>
-          <li>Equal Rites</li>
-          <li>Mort</li>
-          <li>Sourcery</li>
-          <li>Wyrd Sisters</li>
-          <li>Pyramids</li>
-          <li>Guards! Guards!</li>
-          <li>Eric</li>
-          <li>Moving Pictures</li>
-          <li>Reaper Man</li>
-          <li>Witches Abroad</li>
-          <li>Small Gods</li>
-          <li>Lords and Ladies</li>
-          <li>Men at Arms</li>
-          <li>Soul Music</li>
-          <li>Interesting Times</li>
-          <li>Maskerade</li>
-          <li>Feet of Clay</li>
-          <li>Hogfather</li>
-          <li>Jingo</li>
-          <li>The Last Continent</li>
-          <li>Carpe Jugulum</li>
-          <li>The Fifth Elephant</li>
-          <li>The Truth</li>
-          <li>Thief of Time</li>
-          <li>The Last Hero</li>
-          <li>Night Watch</li>
-          <li>Monstrous Regiment</li>
-          <li>Going Postal</li>
-          <li>Thud!</li>
-          <li>Making Money</li>
-          <li>Unseen Academicals</li>
-          <li>Snuff</li>
-          <li>Raising Steam</li>
-          <li>The Shepherd's Crown</li>
-        </ol>
-      </details>
+    <div class="anim-fade-up anim-delay-3">
+      <h2><span class="section-num">01</span> Software & Technology</h2>
+      <ul class="book-list">
+        <li class="book">
+          <div class="book-title"><!-- Book Title --></div>
+          <div class="book-author"><!-- Author --></div>
+          <p class="book-note"><!-- Optional: a line about why you liked it --></p>
+        </li>
+      </ul>
+      <p class="empty-note">Coming soon — I need to dig through my shelves.</p>
     </div>
 
-    <h2>Reading List</h2>
-    <p class="empty-note">Books I want to read — adding these as I go.</p>
-    <ul class="book-list">
-      <li class="book">
-        <div class="book-title"><!-- Book Title --></div>
-        <div class="book-author"><!-- Author --></div>
-      </li>
-    </ul>
-    <p class="empty-note">Coming soon.</p>
+    <div class="anim-fade-up anim-delay-4">
+      <h2><span class="section-num">02</span> Non-Fiction</h2>
+      <ul class="book-list">
+        <li class="book">
+          <div class="book-title"><!-- Book Title --></div>
+          <div class="book-author"><!-- Author --></div>
+        </li>
+      </ul>
+      <p class="empty-note">Coming soon.</p>
+    </div>
+
+    <div class="anim-fade-up anim-delay-5">
+      <h2><span class="section-num">03</span> Sci-Fi & Fantasy</h2>
+      <div class="book-list">
+        <details class="book-series">
+          <summary>
+            <span class="series-title">The Hitchhiker's Guide to the Galaxy</span>
+            <span class="series-meta">— Douglas Adams · 5 books</span>
+          </summary>
+          <ol class="series-books">
+            <li>The Hitchhiker's Guide to the Galaxy</li>
+            <li>The Restaurant at the End of the Universe</li>
+            <li>Life, the Universe and Everything</li>
+            <li>So Long, and Thanks for All the Fish</li>
+            <li>Mostly Harmless</li>
+          </ol>
+        </details>
+
+        <details class="book-series">
+          <summary>
+            <span class="series-title">Discworld</span>
+            <span class="series-meta">— Terry Pratchett · 36 books</span>
+          </summary>
+          <ol class="series-books">
+            <li>The Colour of Magic</li>
+            <li>The Light Fantastic</li>
+            <li>Equal Rites</li>
+            <li>Mort</li>
+            <li>Sourcery</li>
+            <li>Wyrd Sisters</li>
+            <li>Pyramids</li>
+            <li>Guards! Guards!</li>
+            <li>Eric</li>
+            <li>Moving Pictures</li>
+            <li>Reaper Man</li>
+            <li>Witches Abroad</li>
+            <li>Small Gods</li>
+            <li>Lords and Ladies</li>
+            <li>Men at Arms</li>
+            <li>Soul Music</li>
+            <li>Interesting Times</li>
+            <li>Maskerade</li>
+            <li>Feet of Clay</li>
+            <li>Hogfather</li>
+            <li>Jingo</li>
+            <li>The Last Continent</li>
+            <li>Carpe Jugulum</li>
+            <li>The Fifth Elephant</li>
+            <li>The Truth</li>
+            <li>Thief of Time</li>
+            <li>The Last Hero</li>
+            <li>Night Watch</li>
+            <li>Monstrous Regiment</li>
+            <li>Going Postal</li>
+            <li>Thud!</li>
+            <li>Making Money</li>
+            <li>Unseen Academicals</li>
+            <li>Snuff</li>
+            <li>Raising Steam</li>
+            <li>The Shepherd's Crown</li>
+          </ol>
+        </details>
+      </div>
+    </div>
+
+    <div class="anim-fade-up anim-delay-6">
+      <h2><span class="section-num">04</span> Reading List</h2>
+      <p class="empty-note">Books I want to read — adding these as I go.</p>
+      <ul class="book-list">
+        <li class="book">
+          <div class="book-title"><!-- Book Title --></div>
+          <div class="book-author"><!-- Author --></div>
+        </li>
+      </ul>
+      <p class="empty-note">Coming soon.</p>
+    </div>
   </div>
 </body>
 </html>
