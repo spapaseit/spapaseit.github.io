@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf — Sergi Papaseit</title>
+  <meta name="description" content="Books I've loved and would recommend.">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .book-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .book {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .book:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .book-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+
+    .book-author {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .book-note {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.35rem;
+      line-height: 1.55;
+    }
+
+    .empty-note {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="nav-home">SP</a>
+    <div class="nav-links">
+      <a href="/cv">CV</a>
+      <a href="/bookshelf" class="active">Bookshelf</a>
+      <a href="/gym">Gym</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <h1>Bookshelf</h1>
+    <p class="page-intro">Books I've loved and would recommend. Not a comprehensive list — just the ones that stuck with me. I'll add more over time.</p>
+
+    <h2>Software & Technology</h2>
+    <ul class="book-list">
+      <li class="book">
+        <div class="book-title"><!-- Book Title --></div>
+        <div class="book-author"><!-- Author --></div>
+        <p class="book-note"><!-- Optional: a line about why you liked it --></p>
+      </li>
+    </ul>
+    <p class="empty-note">Coming soon — I need to dig through my shelves.</p>
+
+    <h2>Non-Fiction</h2>
+    <ul class="book-list">
+      <li class="book">
+        <div class="book-title"><!-- Book Title --></div>
+        <div class="book-author"><!-- Author --></div>
+      </li>
+    </ul>
+    <p class="empty-note">Coming soon.</p>
+
+    <h2>Fiction</h2>
+    <ul class="book-list">
+      <li class="book">
+        <div class="book-title"><!-- Book Title --></div>
+        <div class="book-author"><!-- Author --></div>
+      </li>
+    </ul>
+    <p class="empty-note">Coming soon.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Gym — Sergi Papaseit</title>
+  <meta name="description" content="My home gym setup, training approach, and useful resources.">
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .page p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.65;
+    }
+
+    .equipment-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .equipment-list li {
+      position: relative;
+      padding-left: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+    }
+
+    .equipment-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--color-text-muted);
+      font-weight: 700;
+    }
+
+    .resource-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .resource-list li {
+      font-size: 0.9rem;
+    }
+
+    .resource-list a {
+      font-weight: 600;
+    }
+
+    .resource-list .resource-desc {
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      margin-top: 0.1rem;
+    }
+
+    .empty-note {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .photo-placeholder {
+      background: var(--color-tag-bg);
+      border: 1px dashed var(--color-border);
+      border-radius: 8px;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="nav-home">SP</a>
+    <div class="nav-links">
+      <a href="/cv">CV</a>
+      <a href="/bookshelf">Bookshelf</a>
+      <a href="/gym" class="active">Gym</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <h1>Home Gym</h1>
+    <p class="page-intro">I train in a small home gym — second iteration, still tiny, but it has everything I need. Weightlifting is my main thing outside of software.</p>
+
+    <div class="photo-placeholder">
+      Photos coming soon
+    </div>
+
+    <h2>The Setup</h2>
+    <p>My gym is compact but functional. Here's what's in it:</p>
+    <ul class="equipment-list">
+      <li><!-- e.g. Squat rack / brand + model --></li>
+      <li><!-- e.g. Barbell --></li>
+      <li><!-- e.g. Weight plates --></li>
+      <li><!-- e.g. Bench --></li>
+      <li><!-- e.g. Dumbbells --></li>
+    </ul>
+    <p class="empty-note">I'll fill this in properly soon.</p>
+
+    <h2>Training</h2>
+    <p>I mostly do strength training — compound lifts, progressive overload, nothing fancy. I track my lifts and try to be consistent rather than heroic.</p>
+
+    <h2>Resources</h2>
+    <p>Useful home gym resources, especially for Europe where shipping and availability can be tricky:</p>
+    <ul class="resource-list">
+      <li>
+        <div><!-- <a href="...">Resource Name</a> --></div>
+        <div class="resource-desc"><!-- Short description --></div>
+      </li>
+    </ul>
+    <p class="empty-note">Links coming soon.</p>
+  </div>
+</body>
+</html>
