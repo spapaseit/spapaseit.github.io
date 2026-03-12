@@ -1,6 +1,6 @@
 /* ── Reset & Base ─────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 *,
 *::before,
@@ -17,8 +17,8 @@
   --color-text: #0a0a0a;
   --color-text-secondary: #3a3a3a;
   --color-text-muted: #8a8578;
-  --color-accent: #e63946;
-  --color-accent-hover: #c1121f;
+  --color-accent: #00d4aa;
+  --color-accent-hover: #00b894;
   --color-border: #d4cfc4;
   --color-tag-bg: #e8e3d8;
   --color-tag-text: #3a3a3a;
@@ -28,12 +28,12 @@
   --color-dark-surface: #141414;
   --color-dark-text: #f0ece2;
   --color-dark-muted: #8a8578;
-  --color-dark-accent: #e63946;
-  --color-dark-accent-hover: #ff4d5a;
+  --color-dark-accent: #00d4aa;
+  --color-dark-accent-hover: #00f0c0;
 
   /* ── Fonts ── */
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Sora', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -133,10 +133,10 @@ a:hover {
 
 .site-nav .nav-home {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--color-text);
   letter-spacing: -0.02em;
-  font-style: italic;
   transition: color 0.2s ease;
 }
 
@@ -200,10 +200,10 @@ a:hover {
 
 .page h1 {
   font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2.6rem;
+  font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: 0.75rem;
 }
 
@@ -263,6 +263,6 @@ a:hover {
   }
 
   .page h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
