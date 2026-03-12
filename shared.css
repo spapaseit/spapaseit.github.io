@@ -1,5 +1,7 @@
 /* ── Reset & Base ─────────────────────────────────── */
 
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 *,
 *::before,
 *::after {
@@ -9,23 +11,30 @@
 }
 
 :root {
-  --color-bg: #fafaf9;
-  --color-surface: #ffffff;
-  --color-text: #1c1917;
-  --color-text-secondary: #57534e;
-  --color-text-muted: #a8a29e;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-border: #e7e5e4;
-  --color-tag-bg: #f5f5f4;
-  --color-tag-text: #44403c;
-  --color-dark-bg: #1c1917;
-  --color-dark-text: #e7e5e4;
-  --color-dark-muted: #a8a29e;
-  --color-dark-accent: #60a5fa;
-  --color-dark-accent-hover: #93bbfd;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* ── Core palette ── */
+  --color-bg: #f0ece2;
+  --color-surface: #f7f4ed;
+  --color-text: #0a0a0a;
+  --color-text-secondary: #3a3a3a;
+  --color-text-muted: #8a8578;
+  --color-accent: #e63946;
+  --color-accent-hover: #c1121f;
+  --color-border: #d4cfc4;
+  --color-tag-bg: #e8e3d8;
+  --color-tag-text: #3a3a3a;
+
+  /* ── Dark palette ── */
+  --color-dark-bg: #0a0a0a;
+  --color-dark-surface: #141414;
+  --color-dark-text: #f0ece2;
+  --color-dark-muted: #8a8578;
+  --color-dark-accent: #e63946;
+  --color-dark-accent-hover: #ff4d5a;
+
+  /* ── Fonts ── */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 html {
@@ -34,40 +43,101 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* ── Grain overlay ─────────────────────────────────── */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ── Links ──────────────────────────────────────────── */
 
 a {
   color: var(--color-accent);
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color 0.2s ease;
 }
 
 a:hover {
   color: var(--color-accent-hover);
 }
 
+/* ── Staggered load animation ──────────────────────── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-delay-1 { animation-delay: 0.05s; }
+.anim-delay-2 { animation-delay: 0.12s; }
+.anim-delay-3 { animation-delay: 0.2s; }
+.anim-delay-4 { animation-delay: 0.3s; }
+.anim-delay-5 { animation-delay: 0.4s; }
+.anim-delay-6 { animation-delay: 0.5s; }
+
 /* ── Site Nav ─────────────────────────────────────── */
 
 .site-nav {
-  padding: 1.25rem 2rem;
+  padding: 1.5rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-text);
+  background: transparent;
+  animation: fadeIn 0.4s ease both;
 }
 
 .site-nav .nav-home {
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   color: var(--color-text);
   letter-spacing: -0.02em;
+  font-style: italic;
+  transition: color 0.2s ease;
 }
 
 .site-nav .nav-home:hover {
@@ -76,17 +146,38 @@ a:hover {
 
 .site-nav .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .site-nav .nav-links a {
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--color-text-muted);
-  transition: color 0.15s;
+  transition: color 0.2s ease, letter-spacing 0.3s ease;
+  position: relative;
+}
+
+.site-nav .nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-nav .nav-links a:hover {
   color: var(--color-text);
+  letter-spacing: 0.16em;
+}
+
+.site-nav .nav-links a:hover::after {
+  width: 100%;
 }
 
 .site-nav .nav-links a.active {
@@ -94,38 +185,59 @@ a:hover {
   font-weight: 600;
 }
 
+.site-nav .nav-links a.active::after {
+  width: 100%;
+  background: var(--color-accent);
+}
+
 /* ── Page Shell ───────────────────────────────────── */
 
 .page {
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 2rem 4rem;
+  padding: 4rem 2.5rem 6rem;
 }
 
 .page h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
   letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
 }
 
 .page .page-intro {
   color: var(--color-text-secondary);
   font-size: 0.95rem;
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  max-width: 540px;
 }
 
 .page h2 {
-  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   color: var(--color-text-muted);
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.page h2::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .page h2:first-of-type {
@@ -136,17 +248,21 @@ a:hover {
 
 @media (max-width: 640px) {
   .site-nav {
-    padding: 1rem 1.25rem;
+    padding: 1.25rem 1.5rem;
     flex-direction: column;
     gap: 0.75rem;
     align-items: flex-start;
   }
 
   .site-nav .nav-links {
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .page {
-    padding: 2rem 1.25rem 3rem;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .page h1 {
+    font-size: 2.2rem;
   }
 }
