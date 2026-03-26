@@ -289,10 +289,17 @@
     <div class="elsewhere anim-fade-up anim-delay-5">
       <a href="https://github.com/spapaseit">GitHub</a>
       <a href="https://linkedin.com/in/sergipapaseit">LinkedIn</a>
-      <a href="mailto:sergi.papaseit.valls@gmail.com">Email</a>
+      <a class="js-email" href="#" data-u="sergi.papaseit.valls" data-d="gmail.com">Email</a>
     </div>
 
     <!-- <p class="colophon anim-fade-up anim-delay-6">Sant Cugat del Vallès</p> -->
   </div>
+  <script>
+    document.querySelectorAll('.js-email').forEach(function(el) {
+      var addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      el.textContent = el.textContent || addr;
+    });
+  </script>
 </body>
 </html>
