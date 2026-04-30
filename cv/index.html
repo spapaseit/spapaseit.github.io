@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <title>Sergi Papaseit — Senior Full-Stack Software Engineer</title>
-  <meta name="description" content="Product-minded full-stack engineer with experience shipping user-facing web products, internal tools, and analytics platforms.">
+  <meta name="description" content="Product-minded full-stack engineer building web products, internal tools, and analytics platforms — mostly with TypeScript, React, Node.js, and .NET.">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="style.css">
@@ -48,8 +48,8 @@
     <main class="content">
       <section id="about" class="section">
         <h2>About</h2>
-        <p>I'm a product-minded full-stack engineer with experience shipping user-facing web products, internal tools, and analytics platforms. I care about creating smooth, intuitive user experiences and building high-quality software in tight collaboration with product and design.</p>
-        <p>I thrive in environments where the goal is to deliver value quickly, validate assumptions, and refine the solution continuously. My strongest technical stack is TypeScript, React, Node.js, and all things .NET, and I'm comfortable jumping between frontend, backend, infra, and data to keep momentum high.</p>
+        <p>I'm a product-minded full-stack engineer. I build web products, internal tools, and analytics platforms — mostly with TypeScript, React, Node.js, and .NET. I care about
+          making things that are genuinely useful and pleasant to use.</p>
       </section>
 
       <section id="experience" class="section">
@@ -60,14 +60,17 @@
             <div>
               <h3>Senior Software Engineer</h3>
               <p class="company">Plex, Inc <span class="location">— Remote</span></p>
+              <p class="project">Internal tooling and integrations for the media platform serving millions of users</p>
             </div>
             <time>Oct 2024 — Present</time>
           </div>
           <ul>
-            <li>Defined and led the integration strategy for connecting external systems into Plex's new Admin backend (TypeScript + Node.js), with a focus on scalability, maintainability, and developer experience.</li>
-            <li>Coordinated across multiple teams to align implementation details and ensure smooth and cohesive product delivery.</li>
+            <li>Built integrations and self-serve tooling enabling non-engineering teams (Content Ops, Legal, Marketing, Finance) to operate without engineering bottlenecks.</li>
+            <li>Designed and shipped a contract management pipeline ingesting Ironclad as source of truth, reconciling NetSuite payable entities and payment data, surfaced through
+              a custom CMS UI, giving Legal and Finance self-serve visibility without engineering involvement.</li>
             <li>Improved testing culture on the Media CMS application (React + TypeScript), guiding the adoption of a more consistent, reliable test strategy.</li>
-            <li>Designed and implemented a queue-based orchestration pattern for K8s cron jobs, significantly reducing resource consumption and improving system responsiveness.</li>
+            <li>Designed and implemented a queue-based orchestration pattern for K8s cron jobs, significantly reducing resource consumption and improving system responsiveness.
+            </li>
           </ul>
         </article>
 
@@ -101,10 +104,12 @@
           </div>
           <ul>
             <li>Designed and built a full survey and reporting platform from scratch, reducing time-to-market from 6 months to 30 minutes.</li>
-            <li>Created a reporting module that automated complex weighting logic, eliminating hours of manual work and drastically improving the experience for reporting admins.</li>
+            <li>Created a reporting module that automated complex weighting logic, eliminating hours of manual work and drastically improving the experience for reporting admins.
+            </li>
             <li>Created an extensible front-end reporting module add-on for the survey platform.</li>
             <li>Pair-designed features with PMs and business stakeholders to ensure the platform aligned with workflows and real user needs.</li>
             <li>Reinforced a strong testing culture with 450+ frontend and 300+ backend tests.</li>
+            <li>Migrated 450+ frontend tests from Jasmine to Jest for Node v20.x compatibility.</li>
             <li>Guided and mentored a junior developer, enhancing their TypeScript skills and development practices.</li>
           </ul>
         </article>
@@ -213,9 +218,6 @@
               <span>PostgreSQL</span>
               <span>MongoDB</span>
               <span>Redis</span>
-              <span>SQLite</span>
-              <span>Entity Framework Core</span>
-              <span>Dapper</span>
             </div>
           </div>
           <div class="skill-group">
@@ -223,10 +225,10 @@
             <div class="tags">
               <span>AWS</span>
               <span>Azure</span>
+              <span>GCP</span>
               <span>Docker</span>
               <span>Kubernetes</span>
               <span>GitHub Actions</span>
-              <span>Azure Pipelines</span>
             </div>
           </div>
           <div class="skill-group">
@@ -246,14 +248,32 @@
             </div>
           </div>
           <div class="skill-group">
-            <h3>Product & Soft Skills</h3>
+            <h3>Mobile Development</h3>
+            <div class="tags">
+              <span>.NET MAUI</span>
+              <span>Blazor Hybrid</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Product Skills</h3>
             <div class="tags">
               <span>Product thinking</span>
               <span>UX intuition</span>
               <span>Fast iteration</span>
+              <span>Customer empathy</span>
+              <span>Experimentation mindset</span>
+              <span>Metrics-driven decisions</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Soft Skills</h3>
+            <div class="tags">
               <span>Mentoring</span>
-              <span>Cross-team alignment</span>
+              <span>Communication</span>
               <span>Tech-business bridge</span>
+              <span>Client interaction</span>
+              <span>User support</span>
+              <span>Technical documentation</span>
             </div>
           </div>
         </div>
@@ -273,7 +293,10 @@
         </div>
 
         <h3 class="subsection-title">Courses</h3>
-        <p>AI Hero — Build DeepSearch in TypeScript (by Matt Pocock)</p>
+        <ul>
+          <li>AI Hero — Claude Code for Real Engineers (by Matt Pocock)</li>
+          <li>AI Hero — Build DeepSearch in TypeScript (by Matt Pocock)</li>
+        </ul>
 
         <h3 class="subsection-title">Other</h3>
         <ul>
@@ -299,7 +322,7 @@
     </main>
   </div>
   <script>
-    document.querySelectorAll('.js-email').forEach(function(el) {
+    document.querySelectorAll('.js-email').forEach(function (el) {
       var addr = el.dataset.u + '@' + el.dataset.d;
       el.href = 'mailto:' + addr;
       el.textContent = el.textContent || addr;
